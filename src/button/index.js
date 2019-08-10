@@ -19,7 +19,7 @@ export default class Button extends React.Component {
           if(!click){
             setTimeout(() => {
               this.props.next();
-            }, 1000);
+            }, 500);
             
           }        
         };
@@ -47,10 +47,11 @@ export default class Button extends React.Component {
       const style = {
         backgroundColor: this.state.active
           ? this.props.bgColor2
-          : this.props.bgColor1
+          : this.props.bgColor1,
+        backgroundImage: this.state.active ? this.props.bgImg : ""
       };
       return (
-        <div className={this.props.classes} id={this.props.id}style={style} onClick={this.handleClick}>
+        <div className={this.props.classes}id={this.props.id} style={style} onClick={this.handleClick}>
           <audio src={this.props.sound} ref={this.audio} />
         </div>
       );

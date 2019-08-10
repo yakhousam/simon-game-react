@@ -77,7 +77,7 @@ export default class Simon extends React.Component {
             
             return;
           }
-          if (playerSeqLength === 3) {
+          if (playerSeqLength === 20) {
             console.log("-----Congratulation you are a winner-------");
             this.setState({
               sequence: [],
@@ -94,10 +94,10 @@ export default class Simon extends React.Component {
           }
           if (playerSeqLength === seqLength) {
             console.log("-----------------WIN-------------------");
-            this.setState(() => ({ playerSequence: [], index: 0, playBtn: 0 , isBusy: true, displayer:'--'}));
+            this.setState(() => ({ playerSequence: [], index: 0, playBtn: 0 , isBusy: true, displayer:'GOOD!'}));
             setTimeout(() => {
               this.addSequence();
-            }, 3000);
+            }, 2000);
             return;
           }
           
@@ -185,8 +185,9 @@ export default class Simon extends React.Component {
             id={1}
             playBtn={this.state.playBtn}
             sound={sound.sound01}
-            bgColor1="gold"
+            bgColor1="#FFAA1D"
             bgColor2="yellow"
+            bgImg="radial-gradient(yellow 5%, #FFAA1D 20%, yellow 40%)"
             click={this.handleClick}
             next={this.next}
             isStarted={this.state.isStarted}
@@ -197,8 +198,9 @@ export default class Simon extends React.Component {
             id={2}
             playBtn={this.state.playBtn}
             sound={sound.sound02}
-            bgColor1="red"
-            bgColor2="orange"
+            bgColor1="#C32148"
+            bgColor2="#FF007C"
+            bgImg="radial-gradient(#FF007C 5%, #C32148 20%, #FF007C 40%)"
             click={this.handleClick}
             next={this.next}
             isStarted={this.state.isStarted}
@@ -209,8 +211,9 @@ export default class Simon extends React.Component {
             id={3}
             playBtn={this.state.playBtn}
             sound={sound.sound03}
-            bgColor1="green"
+            bgColor1="#299617"
             bgColor2="lime"
+            bgImg="radial-gradient(lime 5%, #299617 20%, lime 40%)"
             click={this.handleClick}
             next={this.next}
             isStarted={this.state.isStarted}
@@ -222,7 +225,8 @@ export default class Simon extends React.Component {
             playBtn={this.state.playBtn}
             sound={sound.sound04}
             bgColor1="blue"
-            bgColor2="skyblue"
+            bgColor2="#50BFE6"
+            bgImg="radial-gradient(#50BFE6 5%, blue 20%, #50BFE6 40%)"
             click={this.handleClick}
             next={this.next}
             isStarted={this.state.isStarted}
