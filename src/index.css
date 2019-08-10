@@ -1,0 +1,9 @@
+body{   
+    background: pink;
+    margin: 0;
+    padding: 0;
+}
+#root{
+    display: flex;
+    height: 100vh;
+}

@@ -1,0 +1,53 @@
+.circle{
+    background: purple;
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    border-radius: 50%;
+    /* border: thick double brown; */
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10vmin;
+}
+
+.title{
+    text-align: center;
+    font-size: 5vmin;
+}
+.displayer{
+    text-align: center;
+}
+
+
+@keyframes anime-displayer{
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+.animate-displayer{
+    opacity: 1;
+    animation-name: anime-displayer;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+}
+
+.btn-ctrl-container{
+    display: flex;
+    justify-content: space-around;
+}
+.button-wraper{
+    text-align: center
+}
+.button-wraper p{
+    margin: 0;
+    margin-top: .5em;
+    font-size: 2.5vmin;
+}
+.btn-ctrl{
+    box-sizing: border-box;
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background: red;
+}
+
