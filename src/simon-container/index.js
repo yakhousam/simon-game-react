@@ -8,14 +8,15 @@ import './style.css'
 export default class Simon extends React.Component {
     constructor() {
       super();
+      this.timeOut = null;
       this.state = {
         sequence: [],
         playerSequence: [],
         playBtn: 0,
         index: 0,
-        isStarted: false,
         steps: 0,
         displayer:'OFF',
+        isStarted: false,
         isBusy: true,
         strict: false
       };
@@ -151,11 +152,20 @@ export default class Simon extends React.Component {
         playBtn: 0,
         index: 0,
         steps: 0,
-        displayer:'RESET'
+        displayer:'RESET',
+        isBusy: true
+      },()=>{
+        if(this.timeOut){
+          clearTimeout(this.timeOut)
+        }
+        if(this.state.isBusy){
+          console.log('timeout')
+          this.timeOut = setTimeout(() => {
+            this.addSequence()
+          }, 2000);
+        }
       });
-      setTimeout(() => {
-        this.addSequence()
-      }, 2000);
+      
     };
   
     strict = ()=>{
@@ -163,12 +173,6 @@ export default class Simon extends React.Component {
         return
       }
       this.setState({
-        // sequence: [],
-        // playerSequence: [],
-        // playBtn: 0,
-        // index: 0,
-        // isStarted: false,
-        // steps: 0,
         displayer: this.state.strict ? 'NO STRICT' : 'STRICT',
         strict: !this.state.strict
       });
